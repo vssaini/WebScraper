@@ -1,6 +1,8 @@
-﻿using WebScraper.Services;
-
+﻿
 //WebScrapingViaHap.GetBooksAndExportToCSV();
+//SeleniumService.GetQuotesAndExportToCSV();
 
-WebScrapingViaSelenium.GetQuotesAndExportToCSV();
+using WebScraper.Services.ScrapeMe;
+
+HapService.GetPokemonProductsAndExportToCSV();
 

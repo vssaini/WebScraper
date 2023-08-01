@@ -3,13 +3,15 @@ using HtmlAgilityPack;
 using System.Globalization;
 using WebScraperByHap.Models;
 
-namespace WebScraper.Services
+namespace WebScraper.Services.ToScrape
 {
-    internal class WebScrapingViaHap
+    internal class HapService
     {
         public static void GetBooksAndExportToCSV()
         {
-            var bookLinks = GetBookLinks("http://books.toscrape.com/catalogue/category/books/mystery_3/index.html");
+            const string url = "http://books.toscrape.com/catalogue/category/books/mystery_3/index.html";
+
+            var bookLinks = GetBookLinks(url);
             Console.WriteLine("Found {0} links", bookLinks.Count);
 
             var books = GetBookDetails(bookLinks);
@@ -21,7 +23,7 @@ namespace WebScraper.Services
             var bookLinks = new List<string>();
             var doc = GetDocument(url);
             HtmlNodeCollection linkNodes = doc.DocumentNode.SelectNodes("//h3/a");
-            
+
             var baseUri = new Uri(url);
             foreach (var link in linkNodes)
             {

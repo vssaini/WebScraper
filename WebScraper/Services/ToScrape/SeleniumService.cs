@@ -6,9 +6,9 @@ using WebDriverManager;
 using WebDriverManager.DriverConfigs.Impl;
 using WebScraper.Models;
 
-namespace WebScraper.Services
+namespace WebScraper.Services.ToScrape
 {
-    internal class WebScrapingViaSelenium
+    internal class SeleniumService
     {
         public static void GetQuotesAndExportToCSV()
         {
