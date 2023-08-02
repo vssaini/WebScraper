@@ -1,8 +1,13 @@
-﻿
-//WebScrapingViaHap.GetBooksAndExportToCSV();
-//SeleniumService.GetQuotesAndExportToCSV();
-
+﻿using WebScraper.Services;
 using WebScraper.Services.ScrapeMe;
 
-HapService.GetPokemonProductsAndExportToCSV();
-
+try
+{
+    //WebScrapingViaHap.GetBooksAndExportToCSV();
+    //SeleniumService.GetQuotesAndExportToCSV();
+    HapService.GetPokemonProductsAndExportToCSV();
+}
+catch (Exception exc)
+{
+    Logger.LogError(exc, true);
+}
