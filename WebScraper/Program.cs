@@ -3,9 +3,13 @@ using WebScraper.Services.ScrapeMe;
 
 try
 {
+    // Website - ToScrape
     //WebScrapingViaHap.GetBooksAndExportToCSV();
     //SeleniumService.GetQuotesAndExportToCSV();
-    HapService.GetPokemonProductsAndExportToCSV();
+
+    // Website - Scrapeme
+    //HapService.GetPokemonProductsAndExportToCSV();
+    SeleniumService.GetPokemonProductsAndExportToCSV();
 }
 catch (Exception exc)
 {
