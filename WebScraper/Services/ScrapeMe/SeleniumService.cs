@@ -11,7 +11,7 @@ namespace WebScraper.Services.ScrapeMe
     {
         public static void GetPokemonProductsAndExportToCSV()
         {
-            Logger.LogHeader($"Scraping Pokemon products from Scrapeme.live started at {DateTime.Now:HH:mm:ss}.");
+            Logger.LogWithDoubleLines($"Scraping Pokemon products from Scrapeme.live started at {DateTime.Now:HH:mm:ss}.");
 
             var pokemonProducts = GetAllPokemonProducts();
 
@@ -36,6 +36,9 @@ namespace WebScraper.Services.ScrapeMe
             {
                 // navigating to the target page in the browser 
                 driver.Navigate().GoToUrl("https://scrapeme.live/shop/");
+
+                var screenShot = driver.GetScreenshot();
+                screenShot.SaveAsFile("Screenshot_ScrapeMe.png");
 
                 // getting the HTML product elements 
                 var productHtmlElements = driver.FindElements(By.CssSelector("li.product"));

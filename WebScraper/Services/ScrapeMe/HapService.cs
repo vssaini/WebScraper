@@ -10,7 +10,7 @@ namespace WebScraper.Services.ScrapeMe
     {
         public static void GetPokemonProductsAndExportToCSV()
         {
-            Logger.LogHeader($"Scraping of Pokemon products from Scrapeme.live started at {DateTime.Now:HH:mm:ss}.");
+            Logger.LogWithDoubleLines($"Scraping of Pokemon products from Scrapeme.live started at {DateTime.Now:HH:mm:ss}.");
 
             var pokemonProducts = GetAllPokemonProducts();
 

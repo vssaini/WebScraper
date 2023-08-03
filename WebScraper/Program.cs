@@ -1,5 +1,5 @@
 ﻿using WebScraper.Services;
-using WebScraper.Services.ScrapeMe;
+using WebScraper.Services.Wesco;
 
 try
 {
@@ -9,7 +9,13 @@ try
 
     // Website - Scrapeme
     //HapService.GetPokemonProductsAndExportToCSV();
-    SeleniumService.GetPokemonProductsAndExportToCSV();
+    //SeleniumService.GetPokemonProductsAndExportToCSV();
+
+    // Website - Wesco
+    WescoService.SearchProductPrice();
+
+    Console.WriteLine("Enter any key to close the console window.");
+    Console.ReadKey();
 }
 catch (Exception exc)
 {
